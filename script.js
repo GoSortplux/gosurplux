@@ -74,7 +74,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // -- SCROLL-TO-TOP BUTTON --
-    const scrollToTopBtn = document.getElementById('scroll-to-top');
+   const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+scrollToTopBtn.addEventListener('click', function (e) {
+    e.preventDefault(); // prevent the default anchor behavior
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // for smooth scroll
+    });
+});
+
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
