@@ -1,0 +1,362 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+}
+
+.logo {
+  color: gold;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: gold;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #111;
+  top: 40px;
+  left: 0;
+  border-radius: 5px;
+  z-index: 1001;
+  min-width: 150px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0.7rem 1rem;
+  color: #fff;
+}
+
+.dropdown-content a:hover {
+  background: rgba(255, 215, 0, 0.15);
+  color: gold;
+}
+
+.hamburger {
+  display: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  padding-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(45deg, #1a1a1a, #000);
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  max-width: 90%;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.bracket {
+  font-size: 2.5rem;
+  color: gold;
+  animation: pulse 2s infinite;
+}
+
+.typing-effect {
+  font-size: 2rem;
+  color: gold;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.15em solid gold;
+  animation: typing 3s steps(30, end) infinite, blink-caret 0.75s step-end infinite;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.intro {
+  font-size: 1rem;
+  color: #bbb;
+  max-width: 600px;
+  margin: 1rem auto 2rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.15);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 215, 0, 0.07);
+}
+
+.service-icon {
+  font-size: 2rem;
+  color: gold;
+  margin-bottom: 0.5rem;
+}
+
+.contact {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-btn {
+  background: gold;
+  color: #000;
+  padding: 0.7rem 1.4rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: inline-block;
+  margin-bottom: 2rem;
+  z-index: 3;
+}
+
+.contact-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px gold;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: gold;
+  transform: scale(1.2);
+}
+
+/* WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  border-radius: 50%;
+  padding: 0.7rem;
+  font-size: 1.8rem;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  animation: pulse-whatsapp 2s ease-in-out infinite, glow-whatsapp 4s ease-in-out infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.2) translateY(-5px);
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.7), 0 0 30px rgba(37, 211, 102, 0.5);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #111;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Animations */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: gold; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+@keyframes pulse-whatsapp {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes glow-whatsapp {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(37, 211, 102, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.8), 0 0 30px rgba(37, 211, 102, 0.4);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background: #111;
+    width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+
+  .dropdown.active .dropdown-content {
+    display: block;
+    position: static;
+    background: #222;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  .dropdown-content a {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  .dropdown-content a:hover {
+    background: rgba(255, 215, 0, 0.15);
+    color: gold;
+  }
+
+  .typing-effect {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .service-card {
+    padding: 1rem;
+  }
+
+  .contact-btn {
+    display: inline-block;
+    z-index: 3;
+  }
+}
