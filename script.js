@@ -1,72 +1,65 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Initialize particles.js
-  const particleConfig = {
-    particles: {
-      number: { value: window.innerWidth <= 768 ? 40 : 80, density: { enable: true, value_area: 800 } },
-      color: { value: "#FFD700" },
-      shape: { type: "circle" },
-      opacity: { value: 0.5, random: true },
-      size: { value: 3, random: true },
-      move: { enable: true, speed: 2, random: true }
-    },
-    interactivity: {
-      detect_on: "canvas",
-      events: {
-        onhover: { enable: true, mode: "repulse" },
-        onclick: { enable: true, mode: "push" },
-        resize: true
-      },
-      modes: {
-        repulse: { distance: 100, duration: 0.4 },
-        push: { particles_nb: 4 }
-      }
-    },
-    retina_detect: true
-  };
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+    const header = document.querySelector('.header');
 
-  // Fallback if particles.js fails to load
-  if (typeof particlesJS === "undefined") {
-    console.error("particles.js failed to load");
-    document.getElementById("particles-js").style.background = "linear-gradient(45deg, #1a1a1a, #000)";
-  } else {
-    particlesJS("particles-js", particleConfig);
-  }
+    // -- THEME TOGGLE --
+    const currentTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-  // Hamburger toggle
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("nav-links");
-  const dropdown = document.querySelector(".dropdown");
-
-  hamburger.addEventListener("click", () => {
-    const isExpanded = navLinks.classList.toggle("active");
-    navLinks.style.display = isExpanded ? "flex" : "none";
-    hamburger.setAttribute("aria-expanded", isExpanded);
-    navLinks.setAttribute("aria-hidden", !isExpanded);
-  });
-
-  // Dropdown toggle on mobile
-  dropdown.addEventListener("click", (e) => {
-    if (window.innerWidth <= 768) {
-      e.preventDefault();
-      const isExpanded = dropdown.classList.toggle("active");
-      dropdown.querySelector(".dropbtn").setAttribute("aria-expanded", isExpanded);
+    if (currentTheme === 'dark' || (!currentTheme && prefersDark)) {
+        document.documentElement.classList.add('dark');
+        themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
     }
-  });
 
-  // Close menu when a nav link is clicked
-  navLinks.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      if (window.innerWidth <= 768) {
-        navLinks.classList.remove("active");
-        navLinks.style.display = "none";
-        hamburger.setAttribute("aria-expanded", false);
-        navLinks.setAttribute("aria-hidden", true);
-        dropdown.classList.remove("active");
-        dropdown.querySelector(".dropbtn").setAttribute("aria-expanded", false);
-      }
+    themeToggle.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        const isDark = document.documentElement.classList.contains('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        themeToggle.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
     });
-  });
 
-  // Set footer year
-  document.getElementById("year").textContent = new Date().getFullYear();
+    // -- MOBILE NAVIGATION --
+    hamburgerMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Close mobile menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    });
+
+    // -- STICKY HEADER SHADOW --
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 10) {
+            header.style.boxShadow = '0 2px 10px var(--shadow-color)';
+        } else {
+            header.style.boxShadow = 'none';
+        }
+    });
+
+    // -- SMOOTH SCROLLING --
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // -- FOOTER YEAR --
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
 });
