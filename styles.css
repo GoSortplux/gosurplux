@@ -376,19 +376,20 @@ body {
     animation-play-state: paused;
 }
 
-.whatsapp-fab .agent-icon {
+.whatsapp-fab .notification-badge {
     position: absolute;
     top: -5px;
-    left: -5px;
-    background-color: var(--accent-color);
+    right: -5px;
+    background-color: #FF0000;
+    color: #fff;
     width: 25px;
     height: 25px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
-    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
     border: 2px solid #fff;
 }
 

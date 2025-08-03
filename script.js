@@ -62,4 +62,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
+
+    // -- TYPED.JS FOR HERO SUBTITLE --
+    const typed = new Typed('#typed-subtitle', {
+        strings: ['...the solutions that sorts it!'],
+        typeSpeed: 50,
+        backSpeed: 50,
+        loop: true,
+        startDelay: 1000,
+        showCursor: false,
+    });
 });
