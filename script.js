@@ -72,4 +72,15 @@ document.addEventListener('DOMContentLoaded', () => {
         startDelay: 1000,
         showCursor: false,
     });
+
+    // -- SCROLL-TO-TOP BUTTON --
+    const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollToTopBtn.classList.add('visible');
+        } else {
+            scrollToTopBtn.classList.remove('visible');
+        }
+    });
 });

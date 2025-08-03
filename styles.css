@@ -448,6 +448,39 @@ body {
     opacity: 0.7;
 }
 
+/* Scroll-to-top Button */
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 100px; /* Adjusted to not overlap with WhatsApp FAB */
+    background-color: var(--primary-color);
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    z-index: 1001;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.scroll-to-top-btn.visible {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top-btn:hover {
+    transform: scale(1.1);
+    background-color: var(--accent-color);
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
