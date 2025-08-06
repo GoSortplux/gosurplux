@@ -441,6 +441,19 @@ body {
     transform: scale(1.1);
 }
 
+.footer-contact {
+    text-align: left;
+}
+
+.footer-contact p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-contact i {
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+}
+
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
@@ -514,6 +527,10 @@ body {
 
     .footer-content {
         flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-contact {
         text-align: center;
     }
 
