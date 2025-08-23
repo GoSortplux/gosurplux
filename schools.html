@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoCard for Schools - GoSortplux</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/images/fav.png">
+    <style>
+        .pdf-container {
+            padding: 6rem 0;
+            text-align: center;
+        }
+        .pdf-embed {
+            width: 100%;
+            max-width: 800px;
+            height: 100vh;
+            border: 1px solid var(--shadow-color);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="/" class="logo">
+                    <img src="images/logo.png" alt="GoSortplux Logo">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/#products">Products</a></li>
+                    <li><a href="/#coming-soon">Coming Soon</a></li>
+                    <li><a href="/#contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <button class="hamburger" id="hamburger-menu" aria-label="Open menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="pdf-container">
+            <div class="container">
+                <h2 class="section-title">GoCard for Schools</h2>
+                <p class="section-subtitle">Here you can find more details about our GoCard for Schools solution.</p>
+                <iframe class="pdf-embed" src="https://example.com/path-to-your/school-document.pdf" title="GoCard for Schools PDF"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <img src="images/logo1.png" alt="GoSortplux Logo">
+                    </a>
+                    <p>...the solutions that sorts it!</p>
+                </div>
+                <div class="footer-contact">
+                    <p><i class="fas fa-map-marker-alt"></i> No. 532, Rugan Juli by High tension, City College Road, Karu, Abuja</p>
+                    <p><i class="fas fa-phone"></i> +2347034699330</p>
+                    <p><i class="fas fa-envelope"></i> info@gosortplux.com</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://x.com/gosortplux" target="_blank" aria-label="X"><i class="fab fa-twitter"></i></a>
+                    <a href="https://facebook.com/gosortplux" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/go-sortplux-0b7385374/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://instagram.com/gosortplux" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/2347034699330" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="mailto:info@gosortplux.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> GoSortplux. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
