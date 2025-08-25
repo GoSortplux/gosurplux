@@ -270,6 +270,7 @@ body {
     background-color: #fff;
     color: var(--primary-color);
     font-weight: 700;
+    border: 1px solid var(--primary-color);
 }
 
 .launching-soon-bg {
@@ -358,9 +359,27 @@ body {
     box-shadow: 0 12px 30px var(--shadow-color);
 }
 
-.product-image {
-    width: 100%;
+.product-image-wrapper {
+    position: relative;
     height: 250px;
+}
+
+.product-image-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+}
+
+.product-image {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
