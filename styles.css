@@ -331,6 +331,86 @@ body {
     box-shadow: 0 8px 25px var(--shadow-color);
 }
 
+/* Page Content */
+.page-content {
+    padding: 6rem 0;
+}
+
+.content-section {
+    margin-bottom: 3rem;
+}
+
+.content-section h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.content-section ul {
+    list-style-position: inside;
+    padding-left: 1rem;
+}
+
+/* Custom Table */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.custom-table th,
+.custom-table td {
+    border: 1px solid var(--shadow-color);
+    padding: 0.75rem 1rem;
+    text-align: left;
+}
+
+.custom-table thead th {
+    background-color: var(--card-bg);
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.custom-table tbody tr:nth-child(even) {
+    background-color: var(--card-bg);
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.cta-section .btn {
+    margin: 0.5rem;
+}
+
+/* Video Container */
+.video-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    margin-bottom: 3rem;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+
 /* Products Section */
 .products {
     padding: 6rem 0;
@@ -569,12 +649,32 @@ body {
         display: block;
     }
 
+    .hero {
+        padding: 6rem 0;
+    }
+
     .hero-title {
         font-size: 2.5rem;
     }
 
     .hero-subtitle {
         font-size: 1rem;
+    }
+
+    .page-content,
+    .services,
+    .coming-soon,
+    .promotion,
+    .products {
+        padding: 4rem 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .content-section h3 {
+        font-size: 1.25rem;
     }
 
     .footer-content {
@@ -593,5 +693,13 @@ body {
     .promotion-content {
         flex-direction: column;
         text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-section .btn {
+        display: block;
+        width: 80%;
+        margin: 1rem auto;
     }
 }
