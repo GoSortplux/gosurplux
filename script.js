@@ -4,6 +4,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
     const header = document.querySelector('.header');
 
+    // -- RANDOMIZE SOCIAL CARDS --
+    const socialGrid = document.getElementById('social-grid');
+    if (socialGrid) {
+        const cards = Array.from(socialGrid.children);
+        // Fisher-Yates shuffle
+        for (let i = cards.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [cards[i], cards[j]] = [cards[j], cards[i]];
+        }
+        // Re-append cards in random order
+        cards.forEach(card => socialGrid.appendChild(card));
+    }
+
     // -- THEME TOGGLE --
     const currentTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
