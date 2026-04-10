@@ -516,23 +516,12 @@ body {
     font-size: 1.2rem;
 }
 
-.placeholder-image {
-    background-color: var(--card-bg);
-    border: 2px dashed var(--shadow-color);
+.service-main-image {
+    width: 100%;
+    height: auto;
     border-radius: var(--border-radius);
-    padding: 4rem 2rem;
-    text-align: center;
-    color: var(--text-color);
-    opacity: 0.6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.placeholder-image i {
-    font-size: 4rem;
-    color: var(--primary-color);
+    box-shadow: 0 15px 35px var(--shadow-color);
+    display: block;
 }
 
 /* Products Section */
