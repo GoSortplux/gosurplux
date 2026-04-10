@@ -122,4 +122,73 @@ scrollToTopBtn.addEventListener('click', function (e) {
             scrollToTopBtn.classList.remove('visible');
         }
     });
+
+    // -- PROMOTION CAROUSEL --
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+    const nextButton = document.querySelector('.carousel-arrow.next');
+    const prevButton = document.querySelector('.carousel-arrow.prev');
+    const dotsNav = document.querySelector('.carousel-dots');
+    const dots = Array.from(document.querySelectorAll('.dot'));
+
+    let currentSlideIndex = 0;
+    let carouselInterval;
+
+    const updateCarousel = (index) => {
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        track.style.transform = `translateX(-${index * slideWidth}px)`;
+
+        // Update dots
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+
+        currentSlideIndex = index;
+    };
+
+    const nextSlide = () => {
+        let index = currentSlideIndex + 1;
+        if (index >= slides.length) index = 0;
+        updateCarousel(index);
+    };
+
+    const prevSlide = () => {
+        let index = currentSlideIndex - 1;
+        if (index < 0) index = slides.length - 1;
+        updateCarousel(index);
+    };
+
+    const startInterval = () => {
+        carouselInterval = setInterval(nextSlide, 60000); // 60 seconds
+    };
+
+    const resetInterval = () => {
+        clearInterval(carouselInterval);
+        startInterval();
+    };
+
+    if (track && slides.length > 0) {
+        nextButton.addEventListener('click', () => {
+            nextSlide();
+            resetInterval();
+        });
+
+        prevButton.addEventListener('click', () => {
+            prevSlide();
+            resetInterval();
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                updateCarousel(index);
+                resetInterval();
+            });
+        });
+
+        // Handle window resize to keep slide position correct
+        window.addEventListener('resize', () => {
+            updateCarousel(currentSlideIndex);
+        });
+
+        startInterval();
+    }
 });
