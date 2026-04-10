@@ -38,7 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleMenu = () => {
         navLinks.classList.toggle('active');
         navOverlay.classList.toggle('active');
-        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        if (navLinks.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
+        }
     };
 
     hamburgerMenu.addEventListener('click', toggleMenu);
