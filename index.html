@@ -15,7 +15,7 @@
     <title>GoSortplux - ...the solutions that sorts it!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link rel="stylesheet" href="styles.css">
       <link rel="icon" type="image/x-icon" href="/images/fav.png">
@@ -31,9 +31,9 @@
                 </a>
                 <ul class="nav-links">
                     <li><a href="/">Home</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gobokin">Gobokin</a></li>
                     <li><a href="#products">Products</a></li>
-                    <li><a href="#coming-soon">Coming Soon</a></li>
+                    <li><a href="#services">Services</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="nav-actions">
@@ -52,37 +52,69 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-title">We turn complex ideas into sleek, high-performing digital solutions.</h1>
-                    <p class="hero-subtitle" id="typed-subtitle"></p>
-                    <a href="#coming-soon" class="btn btn-primary">We Build Bold</a>
+                    <h1 class="hero-title reveal">We turn complex ideas into sleek, <span class="text-gradient">high-performing</span> digital solutions.</h1>
+                    <div class="hero-subtitle-container reveal">
+                        <div class="hero-subtitle" id="typed-subtitle"></div>
+                    </div>
+                    <div class="reveal">
+                        <a href="#gobokin" class="btn btn-primary">Explore Solutions</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gobokin" class="gobokin">
+            <div class="container">
+                <div class="gobokin-header reveal">
+                    <h2 class="section-title">Gobokin Ecosystem</h2>
+                    <p class="section-subtitle">Bridging the gap between event organizers and venue owners.</p>
+                </div>
+                <div class="gobokin-content">
+                    <div class="gobokin-text reveal-left">
+                        <h3>Comprehensive Event Management</h3>
+                        <p>Gobokin is a comprehensive event management and venue booking ecosystem designed to bridge the gap between event organizers and venue owners.</p>
+                        <p>Our platform streamlines the entire lifecycle of an event—from discovering the perfect hall and managing real-time bookings to automated ticketing and financial settlements.</p>
+                        <ul class="gobokin-features">
+                            <li><i class="fas fa-check-circle"></i> Discover & Book Venues</li>
+                            <li><i class="fas fa-check-circle"></i> Real-time Availability</li>
+                            <li><i class="fas fa-check-circle"></i> Robust Management Tools</li>
+                            <li><i class="fas fa-check-circle"></i> Automated Commission Tracking</li>
+                        </ul>
+                    </div>
+                    <div class="gobokin-visual reveal-right">
+                        <div class="placeholder-image">
+                            <i class="fas fa-calendar-alt"></i>
+                            <p>Recommended Image: A high-quality dashboard screenshot of the Gobokin venue management interface or a professional photo of a modern event venue.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="products" class="products">
             <div class="container">
-                <h2 class="section-title">Our Products</h2>
+                <h2 class="section-title reveal">Our Products</h2>
                 <p class="section-subtitle">Discover our innovative products designed to solve your problems.</p>
                 <div class="product-grid">
-                    <div class="product-card">
+                    <div class="product-card reveal">
                         <div class="product-image-wrapper">
                             <div class="product-image-bg" style="background-image: url('images/goschools.png')"></div>
                             <img src="images/goschools.png" alt="GoCard for Schools" class="product-image">
                         </div>
                         <div class="product-content">
                             <h3 class="product-title">GoCard for Schools</h3>
-                            <p class="product-description">The GO Card is a smart ID and attendance solution designed to enhance student safety, automate attendance tracking, and improve communication with parents. It combines digital ID and instant SMS alerts, giving schools real-time attendance data and parents timely updates. Affordable and easy to use, GO Card helps schools operate more efficiently while promoting accountability trust from parents.</p>
+                            <p class="product-description">A smart ID and attendance solution designed to enhance student safety, automate attendance tracking, and improve communication with parents. Real-time data at your fingertips.</p>
                             <a href="schools.html" class="btn btn-primary">Learn More</a>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card reveal">
                         <div class="product-image-wrapper">
                             <div class="product-image-bg" style="background-image: url('images/gobusiness.png')"></div>
                             <img src="images/gobusiness.png" alt="GoCard for Business" class="product-image">
                         </div>
                         <div class="product-content">
                             <h3 class="product-title">GoCard for Business</h3>
-                            <p class="product-description">A smart NFC-enabled ID card that doubles as a digital business card, enabling tap-to-connect contact sharing, WhatsApp integration, and social media linking. Paired with a mobile-based attendance dashboard, it streamlines internal operations while boosting brand visibility.</p>
+                            <p class="product-description">NFC-enabled smart IDs that double as digital business cards. Streamline operations and boost brand visibility with tap-to-connect technology.</p>
                             <a href="business.html" class="btn btn-primary">Learn More</a>
                         </div>
                     </div>
@@ -92,71 +124,75 @@
 
         <section id="services" class="services">
             <div class="container">
-                <h2 class="section-title">Our Services</h2>
-                <p class="section-subtitle">We offer a wide range of services to meet your business needs.</p>
+                <h2 class="section-title reveal">Our Services</h2>
+                <p class="section-subtitle reveal">Tailored digital solutions to elevate your business operations.</p>
                 <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-solar-panel"></i></div>
-                        <h3>Solar Tech Solutions</h3>
-                        <p>Powering Your Future with Clean Energy.</p>
-                        <a href="solar.html" class="btn btn-primary" style="margin-top: 1rem;">Learn More</a>
-                    </div>
-                    <div class="service-card">
+                    <div class="service-card reveal">
                         <div class="service-icon"><i class="fas fa-code"></i></div>
                         <h3>Software Development</h3>
-                        <p>Custom software solutions tailored to your specific requirements.</p>
+                        <p>Custom software solutions tailored to your specific requirements, from web apps to complex backend systems.</p>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card reveal">
                         <div class="service-icon"><i class="fas fa-network-wired"></i></div>
                         <h3>Networking Solutions</h3>
-                        <p>Robust and secure networking infrastructure for your business.</p>
+                        <p>Robust and secure networking infrastructure designed for high availability and peak performance.</p>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card reveal">
                         <div class="service-icon"><i class="fas fa-tasks"></i></div>
                         <h3>Management Systems</h3>
-                        <p>Efficient management systems to streamline your operations.</p>
+                        <p>Intelligent management systems to automate workflows and streamline your daily operations.</p>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card reveal">
                         <div class="service-icon"><i class="fas fa-cogs"></i></div>
                         <h3>Custom Tech Solutions</h3>
-                        <p>Innovative and customized technology solutions for your unique challenges.</p>
+                        <p>Innovative and customized technology solutions built to tackle your most unique business challenges.</p>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card reveal">
                         <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
                         <h3>EDTEK Solution</h3>
-                        <p>Technology solutions for the education sector.</p>
+                        <p>Modernizing the educational landscape with integrated digital learning and management tools.</p>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card reveal">
                         <div class="service-icon"><i class="fas fa-robot"></i></div>
                         <h3>AI/ML</h3>
-                        <p>Harnessing the power of Artificial Intelligence and Machine Learning.</p>
+                        <p>Harnessing the power of Artificial Intelligence to unlock predictive insights and automate complex tasks.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="coming-soon" class="coming-soon">
+        <section id="gobokin-ticketing" class="gobokin-ticketing">
             <div class="container">
-                <h2 class="section-title">Launching Soon</h2>
-                <p class="section-subtitle">We're putting the final touches on some game-changing products. Get ready.</p>
-                <div class="launching-soon-cta">
-                    <div class="launching-soon-content">
-                        <h3>Something Big is Coming</h3>
-                        <p>Be the first to know when we launch.</p>
-                        <a href="#" class="btn btn-secondary">Notify Me</a>
+                <div class="ticketing-wrapper">
+                    <div class="ticketing-visual reveal-left">
+                        <div class="placeholder-image">
+                            <i class="fas fa-ticket-alt"></i>
+                            <p>Recommended Image: A mobile UI mockup showing a QR-based event ticket or a vibrant event crowd with a "Ticketing" overlay.</p>
+                        </div>
+                        <div class="badge-upcoming">Upcoming Service</div>
                     </div>
-                    <div class="launching-soon-bg"></div>
+                    <div class="ticketing-text reveal-right">
+                        <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">Gobokin Events & Ticketing</h2>
+                        <p>Gobokin Events & Ticketing gives you complete control over your events — from ticket sales to guest management — all in one place.</p>
+                        <p>Create your event, sell tickets, manage attendees, and handle check-ins without switching between multiple tools. Everything works seamlessly with your venue bookings, so your entire event stays organized from start to finish.</p>
+                        <div class="feature-pills">
+                            <span><i class="fas fa-qrcode"></i> QR Entry</span>
+                            <span><i class="fas fa-shield-alt"></i> Secure Payments</span>
+                            <span><i class="fas fa-chart-line"></i> Real-time Tracking</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="promotion" class="promotion">
+        <section id="promotion" class="promotion reveal">
             <div class="container">
                 <div class="promotion-content">
                     <div class="promotion-text">
-                        <h2>Special Promotion!</h2>
-                        <p>Check out our GoCard (SMARTID). Don't miss out!</p>
-                        <a href="schools.html" class="btn btn-primary">Learn More</a>
+                        <span class="badge">Limited Offer</span>
+                        <h2>Elevate Your Security</h2>
+                        <p>Check out our GoCard (SMARTID). The most advanced smart ID solution for modern institutions.</p>
+                        <a href="schools.html" class="btn btn-primary">Get Started Today</a>
                     </div>
                     <div class="promotion-image">
                         <img src="images/promo.png" alt="Special Promotion">
@@ -168,7 +204,7 @@
 
     <footer id="contact" class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-content reveal">
                 <div class="footer-brand">
                     <a href="/" class="logo">
                         <img src="images/logo1.png" alt="GoSortplux Logo">
