@@ -63,15 +63,32 @@ document.addEventListener('DOMContentLoaded', () => {
         yearSpan.textContent = new Date().getFullYear();
     }
 
-    // -- TYPED.JS FOR HERO SUBTITLE --
+    // -- TYPED.JS FOR HERO SUBTITLE (Dev Mode) --
     const typed = new Typed('#typed-subtitle', {
-        strings: ['...the solutions that sorts it!'],
-        typeSpeed: 50,
-        backSpeed: 50,
+        strings: [
+            '<span class="code-keyword">const</span> <span class="code-function">solution</span> = () => {<br>&nbsp;&nbsp;<span class="code-keyword">return</span> <span class="code-string">"the solutions that sorts it!"</span>;<br>};',
+            '<span class="code-comment">// Building bold digital experiences...</span><br><span class="code-keyword">engine</span>.<span class="code-function">start</span>({ <span class="code-string">"performance"</span>: <span class="code-keyword">true</span> });'
+        ],
+        typeSpeed: 40,
+        backSpeed: 20,
         loop: true,
-        startDelay: 1000,
-        showCursor: false,
+        startDelay: 500,
+        showCursor: true,
+        cursorChar: '_',
+        contentType: 'html'
     });
+
+    // -- SCROLL REVEAL --
+    const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    reveals.forEach(reveal => revealObserver.observe(reveal));
 
     // -- SCROLL-TO-TOP BUTTON --
    const scrollToTopBtn = document.getElementById('scroll-to-top');
