@@ -220,7 +220,7 @@ body {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.5rem;
 }
 
@@ -485,6 +485,7 @@ body {
 /* Custom Table */
 .custom-table {
     width: 100%;
+    min-width: 600px;
     border-collapse: collapse;
     margin-bottom: 2rem;
     box-shadow: 0 5px 15px var(--shadow-color);
@@ -540,6 +541,27 @@ body {
 .table-responsive {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    position: relative;
+}
+
+.table-responsive::after {
+    content: 'Swipe to view more →';
+    display: none;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    background: var(--card-bg);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .table-responsive::after {
+        display: block;
+    }
 }
 
 
@@ -822,7 +844,7 @@ body {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 2fr 1.5fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 4rem;
     margin-bottom: 4rem;
 }
@@ -943,23 +965,52 @@ body {
 }
 
 
+/* Navigation Overlay */
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    :root {
+        --section-padding: 4rem 0;
+    }
+
     .nav-links {
-        display: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: var(--bg-color);
         flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: var(--header-bg);
-        padding: 1rem 0;
-        text-align: center;
-        gap: 1.5rem;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        z-index: 1000;
+        transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
     }
 
     .nav-links.active {
-        display: flex;
+        right: 0;
     }
 
     .hamburger {
@@ -1010,13 +1061,78 @@ body {
     .promotion-content {
         flex-direction: column;
         text-align: center;
+        padding: 3rem 1.5rem;
+    }
+
+    .promotion-text h2 {
+        font-size: 2rem;
+    }
+
+    .promotion-image {
+        margin-top: 2rem;
+    }
+
+    .gobokin-content, .ticketing-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .gobokin-visual, .ticketing-visual {
+        order: 2;
+    }
+
+    .gobokin-text, .ticketing-text {
+        order: 1;
+        text-align: center;
+    }
+
+    .gobokin-features li {
+        justify-content: center;
+    }
+
+    .feature-pills {
+        justify-content: center;
+    }
+
+    .hero-subtitle-container {
+        padding: 1rem;
+        font-size: 0.85rem;
+        min-height: auto;
     }
 }
 
 @media (max-width: 480px) {
     .cta-section .btn {
         display: block;
-        width: 80%;
-        margin: 1rem auto;
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .social-grid {
+        columns: 1;
+    }
+
+    .whatsapp-fab {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 1.5rem;
+    }
+
+    .scroll-to-top-btn {
+        right: 80px;
+        bottom: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
     }
 }

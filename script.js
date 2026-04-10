@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburgerMenu = document.getElementById('hamburger-menu');
     const navLinks = document.querySelector('.nav-links');
     const header = document.querySelector('.header');
+    const navOverlay = document.getElementById('nav-overlay');
 
     // -- RANDOMIZE SOCIAL CARDS --
     const socialGrid = document.getElementById('social-grid');
@@ -34,15 +35,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // -- MOBILE NAVIGATION --
-    hamburgerMenu.addEventListener('click', () => {
+    const toggleMenu = () => {
         navLinks.classList.toggle('active');
-    });
+        navOverlay.classList.toggle('active');
+        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    };
+
+    hamburgerMenu.addEventListener('click', toggleMenu);
+    navOverlay.addEventListener('click', toggleMenu);
 
     // Close mobile menu when a link is clicked
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             if (navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
+                toggleMenu();
             }
         });
     });
