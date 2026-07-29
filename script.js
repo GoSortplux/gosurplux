@@ -59,6 +59,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // -- GOBOKIN TABS INTERACTIVE LOGIC --
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetTab = btn.getAttribute('data-tab');
+
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabPanes.forEach(p => p.classList.remove('active'));
+
+            btn.classList.add('active');
+            const targetPane = document.getElementById(targetTab);
+            if (targetPane) {
+                targetPane.classList.add('active');
+            }
+        });
+    });
+
     // -- STICKY HEADER SHADOW --
     window.addEventListener('scroll', () => {
         if (window.scrollY > 10) {
