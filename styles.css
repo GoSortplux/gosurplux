@@ -718,6 +718,231 @@ body {
     display: block;
 }
 
+/* Dual Overlapping Images CSS */
+.dual-images {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 400px;
+    margin: 2rem 0;
+}
+
+.main-img-wrapper {
+    position: relative;
+    width: 75%;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.sub-img-wrapper {
+    position: absolute;
+    width: 55%;
+    bottom: -20px;
+    right: -10px;
+    z-index: 3;
+    transition: transform 0.3s ease;
+}
+
+.main-img-wrapper img,
+.sub-img-wrapper img {
+    border: 4px solid var(--bg-color);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.dual-images:hover .main-img-wrapper {
+    transform: translate(-10px, -5px);
+}
+
+.dual-images:hover .sub-img-wrapper {
+    transform: translate(10px, 5px);
+}
+
+/* Gobokin Tabs Section */
+.gobokin-tabs-section {
+    margin-top: 5rem;
+    background-color: var(--card-bg);
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 15px 35px var(--shadow-color);
+    border: 1px solid var(--shadow-color);
+}
+
+.tabs-header {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    border-bottom: 2px solid var(--shadow-color);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    opacity: 0.6;
+}
+
+.tab-btn i {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.tab-btn:hover {
+    opacity: 1;
+    background-color: rgba(41, 95, 167, 0.05);
+}
+
+.tab-btn.active {
+    opacity: 1;
+    background-color: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(41, 95, 167, 0.2);
+}
+
+.tab-btn.active i {
+    color: #fff;
+}
+
+.tabs-content {
+    position: relative;
+}
+
+.tab-pane {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.tab-intro-text {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    text-align: center;
+    opacity: 0.9;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.feature-item {
+    background-color: var(--bg-color);
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--shadow-color);
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px var(--shadow-color);
+    border-color: rgba(41, 95, 167, 0.2);
+}
+
+.feature-icon-wrapper {
+    background-color: rgba(41, 95, 167, 0.1);
+    color: var(--primary-color);
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.feature-desc h5 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 0.4rem;
+}
+
+.feature-desc p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    line-height: 1.4;
+}
+
+.why-gobokin {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--card-bg);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0 12px 12px 0;
+}
+
+.why-gobokin h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.why-tagline {
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .gobokin-tabs-section {
+        padding: 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .tabs-header {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .tab-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .dual-images {
+        min-height: auto;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .main-img-wrapper, .sub-img-wrapper {
+        position: static;
+        width: 100%;
+    }
+
+    .main-img-wrapper img, .sub-img-wrapper img {
+        border-width: 2px;
+    }
+}
+
 /* Products Section */
 .products {
     padding: var(--section-padding);
